@@ -1,22 +1,17 @@
 <template>
-  <div>
-    <top-header />
+  <div id="app">
     <main id="main" role="main">
+      <nav-bar />
       <nuxt />
     </main>
-
-    <bottom-footer />
   </div>
 </template>
 
 <script>
-import TopHeader from "~/components/TopHeader.vue";
-import BottomFooter from "~/components/BottomFooter.vue";
-
+import NavBar from "~/components/NavBar";
 export default {
   components: {
-    TopHeader,
-    BottomFooter
+    NavBar
   }
 };
 </script>

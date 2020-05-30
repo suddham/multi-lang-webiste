@@ -11,7 +11,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^2.0.0"
+    "@nuxtjs/axios": "^5.10.3",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "@nuxtjs/svg": "^0.1.11",
+    "json-server": "^0.16.1",
+    "nuxt": "^2.12.2"
   },
   "devDependencies": {
     "css-loader": "^3.5.3",

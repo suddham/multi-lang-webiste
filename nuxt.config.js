@@ -18,7 +18,7 @@ export default {
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Zilla+Slab:400,700"
+        href: "https://fonts.googleapis.com/css?family=Poppins:400,700"
       }
     ]
   },
@@ -37,11 +37,11 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: ["@nuxtjs/svg", "@nuxtjs/style-resources"],
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ["@nuxtjs/axios"],
   /*
    ** Build configuration
    */
