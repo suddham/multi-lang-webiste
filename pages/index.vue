@@ -12,6 +12,7 @@
 
 <script>
 import EventCard from "~/components/EventCard";
+import { mapState } from "vuex";
 
 export default {
   head() {
@@ -20,19 +21,16 @@ export default {
     };
   },
   components: { EventCard },
-  async asyncData({ $axios }) {
-    const { data } = await $axios
-      .get("http://localhost:3000/events")
-      .catch(res => {
-        console.error({
-          statusCode: 503,
-          message: "Unable to fetch events from API try again later"
-        });
+  async fetch({ store, error }) {
+    try {
+      await store.dispatch("events/fetchEvents");
+    } catch (e) {
+      error({
+        statusCode: 404,
+        message: `Failed to fetch events data`
       });
-
-    return {
-      events: data
-    };
-  }
+    }
+  },
+  computed: { ...mapState({ events: state => state.events.events }) }
 };
 </script>
